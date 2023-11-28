@@ -151,7 +151,7 @@ var yearlbl = canvas_group.append("text")
   .attr("x", 850)
   .attr("y", 500)
   .attr("text-anhor", "middle")
-  .attr("font-size","20px")
+  .attr("font-size","30px")
   .attr("font-style","italic")
   .text("")
 //	.text('');
