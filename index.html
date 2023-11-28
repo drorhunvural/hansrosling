@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+
+<head>
+    <link href="style.css">
+
+    <style>
+
+    
+    h1{
+        color: black;
+        text-align: center;
+        font-style: italic;
+    }
+    h2{
+        color: black;
+        text-align: center;
+        font-style: italic;
+    }
+</style>
+
+</head>
+
+<body>
+
+    <h1>Orhun Vural</h1>
+    <h2>Data Visualization Assignment II</h2>
+
+    
+    <div class="container" align="center">
+        <input id="radio" type="radio" name="continents" value="all" onclick="draw_circles()" onchange="handleChange()" checked>All
+        <input id="radio" type="radio" name="continents" value="europe" onclick="draw_circles()" onchange="handleChange()">Europe
+        <input id="radio" type="radio" name="continents" value="asia" onclick="draw_circles()" onchange="handleChange()">Asia
+        <input id="radio" type="radio" name="continents" value="americas" onclick="draw_circles()" onchange="handleChange()">Americas
+        <input id="radio" type="radio" name="continents" value="africa" onclick="draw_circles()" onchange="handleChange()">Africa
+    
+        <div id="svg_chart">
+        </div>
+        
+        <p>Number of points: <input min=0 max=214 value=0 type="range" id="slider"></p>
+        <button onclick="play()" id="animate" value="Play">Play</button>
+        <button onclick="reset()" id="reset" value="Reset"> Reset </button>
+    </div>
+
+   
+
+    <script>
+
+        function handleChange()
+        {
+            document.getElementById('slider').value = 0;
+        }
+
+var myRadios = document.getElementsByName('continents');
+var setCheck;
+var x = 0;
+for(x = 0; x < myRadios.length; x++){
+
+    myRadios[x].onclick = function(){
+        if(setCheck != this){
+             setCheck = this;
+        }else{
+            this.checked = false;
+            setCheck = null;
+    }
+    };
+
+}
+    </script>
+    
+    <script src="https://d3js.org/d3.v5.js"></script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>
